@@ -1,0 +1,32 @@
+{
+  "name": "homework11-signin",
+  "version": "0.0.0",
+  "description": "Homework11-Sign In",
+  "private": true,
+  "author": "Liao Yuxuan - 18322043",
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.0.0-beta1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-session": "^1.17.1",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.5.1",
+    "js-sha256": "^0.9.0",
+    "less": "^4.0.0",
+    "less-middleware": "^3.1.0",
+    "mongoose": "^5.11.8",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

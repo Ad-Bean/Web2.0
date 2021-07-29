@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet" href="/stylesheets/homepage.css")
+    script(src="/javascripts/jquery.min.js", defer)
+    script(src="/javascripts/bootstrap.bundle.min.js", defer)
+    script(src="/javascripts/popper.min.js", defer)
+    script(src="/javascripts/homepage.js", defer)
+    title Error
+  body
+    .myContainer.is-login#mainContainer
+      .card.card--login.shadow-2dp.is-active#logInForm
+        .card__content
+          .required.text-center.lead You can only login your own account!
+          .card__content
+            .inputfield
+              label.inputfield__label Username
+              span.inputfield__input #{username}
+
+            .inputfield
+              label.inputfield__label StudentID
+              span.inputfield__input #{number}
+
+            .inputfield
+              label.inputfield__label Phone
+              span.inputfield__input #{phone}
+
+            .inputfield
+              label.inputfield__label Email
+              span.inputfield__input #{email}
+
+          form.card__action(action="/signout" method="post")
+            button.btn.btn--primary.btn--block(type='submit').
+              Sign Out

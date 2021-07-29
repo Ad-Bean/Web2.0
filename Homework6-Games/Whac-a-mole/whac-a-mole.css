@@ -1,0 +1,107 @@
+/* 
+  Homework 6-2 - Whac a mole
+  廖雨轩 18322043
+
+  Passed W3C CSS Validation Service and no errors.
+  All the comments are below.  
+  
+  Since the firefox can't modify radio button's size, please use other browsers like Edge or Chrome
+*/
+.mainContainer {
+  font-family: "Microsoft Yahei", Tahoma, sans-serif;
+}
+
+.headerContainer {
+  text-align: center;
+}
+
+.headerTitle,
+.headerInfo {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.headerTitle {
+  font-size: 48px;
+  margin: 16px 0;
+}
+
+.menuBar {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.flexBox {
+  width: 400px;
+  height: 20%;
+  margin: 0 auto;
+}
+
+.menuBar .start,
+.menuBar .condition {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuBar .start {
+  margin-top: 20px;
+}
+
+.instructions {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#time,
+#score {
+  text-align: left;
+  width: 48px;
+  background-color: transparent;
+  font-size: 16px;
+  border: none;
+  color: #000;
+}
+
+#condition {
+  width: 160px;
+  text-align: center;
+  padding: 0;
+  background-color: transparent;
+  font-size: 16px;
+  border: none;
+  color: #000;
+}
+
+.gameButton {
+  border-radius: 4px;
+  background-color: #eee;
+  border: 1px solid #e7e7e7;
+  height: 24px;
+}
+
+.timeText,
+.scoreText {
+  font-weight: 600;
+}
+
+.gameContainer {
+  width: 800px;
+  height: 480px;
+  margin: 0px auto;
+  border-top: 2px solid rgb(183, 179, 179);
+  border-bottom: 2px solid rgb(183, 179, 179);
+}
+
+.dirts {
+  width: 80px;
+  height: 40px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.dirts:checked {
+  border: none;
+}

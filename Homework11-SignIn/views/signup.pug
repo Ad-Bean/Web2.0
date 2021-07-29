@@ -1,0 +1,80 @@
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width,initial-scale=1')
+        link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
+        link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
+        link(rel="stylesheet" href="/stylesheets/homepage.css")
+        script(src="/javascripts/jquery.min.js", defer)
+        script(src="/javascripts/bootstrap.bundle.min.js", defer)
+        script(src="/javascripts/popper.min.js", defer)
+        script(src="/javascripts/homepage.js", defer)
+        title Sign Up
+    body
+        .myContainer.is-login#mainContainer
+            form.card.card--login.shadow-2dp.is-active#logInForm(action="/regist" method="post")
+                .card__content.signupSuccessClass
+                    .inputfield.usernameErrorClass
+                        input.inputfield__input#username(type='text' name="username" value=username data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="请输入 6~18 位英文字母、数字或下划线，必须以英文字母开头")
+                        label.inputfield__label
+                            | Username 
+                            i.required *
+                        span.inputfield__underline
+                    .required
+                        span #{usernameError}
+
+                    .inputfield.passwordErrorClass
+                        input.inputfield__input#passowrd(type='password' name="password" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="请输入 6~12 位数字、大小写字母、中划线、下划线")
+                        label.inputfield__label
+                            | Password 
+                            i.required *
+                        span.inputfield__underline
+                    .required
+                        span #{passwordError}
+
+                    .inputfield.repeatPasswordErrorClass
+                        input.inputfield__input#repeatPassword(type='password' name="repeatPassword" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="请确认你的密码")
+                        label.inputfield__label
+                            | Password Confirm 
+                            i.required *
+                        span.inputfield__underline
+                    .required
+                        span #{repeatPasswordError}
+
+                    .inputfield.numberErrorClass
+                        input.inputfield__input#number(type='text' name="number"  value=number data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="请输入 8 位数字，不能以 0 开头")
+                        label.inputfield__label
+                            | StudentID 
+                            i.required *
+                        span.inputfield__underline
+                    .required
+                        span #{numberError}
+
+                    .inputfield.phoneErrorClass
+                        input.inputfield__input#phone(type='phone' name="phone" value=phone data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="请输入 11 位数字，不能以 0 开头")
+                        label.inputfield__label
+                            | Phone 
+                            i.required *
+                        span.inputfield__underline
+                    .required
+                        span #{phoneError}
+
+                    .inputfield.emailErrorClass
+                        input.inputfield__input#email(type='text' name="email" value=email data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="请输入你的电子邮箱地址")
+                        label.inputfield__label
+                            | Email 
+                            i.required *
+                        span.inputfield__underline
+                    .required
+                        span #{emailError}
+
+                    p.text-center
+                        | Fields marked 
+                        i.required *
+                        |  are required.
+                .card__action
+                    button.btn.btn--reset.btn--block(type='reset') reset
+                .card__action
+                    button#pending.btn.btn--primary.btn--block(type='submit') Create an user
+                .card__action
+                    a.btn.btn--secondry.btn--block(href="/") Log in

@@ -1,0 +1,126 @@
+/* 
+  Homework 9 - Sign Up
+  廖雨轩 18322043
+
+  Passed W3C CSS Validation Service and no errors.
+*/
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #354b60;
+}
+
+.mainContainer {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 200px;
+}
+
+.headerContainer {
+  padding-top: 4px;
+}
+
+.icon {
+  margin-right: 8px;
+  padding-top: 4px;
+  height: 32px;
+  width: 32px;
+}
+
+.username,
+.studentID,
+.phone,
+.email {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#username,
+#studentID,
+#phone,
+#email {
+  width: 200px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 240px;
+  margin: 32px auto;
+  justify-content: space-between;
+}
+
+.reset,
+.register {
+  border: none;
+  margin: 0 8px;
+  background-color: #010a15;
+  width: 80px;
+  height: 40px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signInContainer {
+  width: 400px;
+  height: 42px;
+  margin: 0 auto;
+  margin-top: 16px;
+  border-radius: 8px;
+  background-color: #222;
+  text-align: center;
+}
+
+.signIn {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 42px;
+  text-decoration: none;
+}
+
+.signIn:hover {
+  color: #366897;
+}
+
+.checked {
+  margin-left: 4px;
+}
+
+.usernamecheck,
+.studentIDcheck,
+.phonecheck,
+.emailcheck,
+.usernamefalse,
+.studentIDfalse,
+.phonefalse,
+.emailfalse {
+  display: none;
+}
+
+.info {
+  margin: 0 auto;
+  width: 300px;
+  height: 36px;
+  background-color: #ffeeee;
+  border-radius: 8px;
+  display: none;
+  line-height: 36px;
+  color: #fa5580;
+}
+
+.taller {
+  height: 440px;
+}
+
+.button:hover {
+  background-color: #354b60;
+}

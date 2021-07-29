@@ -1,0 +1,57 @@
+<!-- 
+Homework 4 - Simple Calculator
+廖雨轩 18322043
+
+Passed W3C HTML Validation Service and no errors.
+All the comments are below. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="assets/Calculator.ico" type="image/x-icon" />
+  <!-- use async attribute to avoid blocking the html -->
+  <script src="calculator.js" async></script>
+  <title>Calculator</title>
+</head>
+
+<body>
+  <div class="mainContainer">
+    <!-- the upper input is expression outpu, while the lower input is the result -->
+    <div class="outputContainer">
+      <input id="expression" name="output" value="0" type="text" disabled />
+      <input id="result" type="text" disabled />
+    </div>
+    <!-- basic operators: + - * / = . () and backspace, and use onclick event to calculate -->
+    <div class="operatorContainer">
+      <div class="operator clear" onclick="clearError()">C</div>
+      <div class="operator brace" onclick="operator('(')">(</div>
+      <div class="operator brace" onclick="operator(')')">)</div>
+      <div class="operator" onclick="backspace()">
+        <img src="assets/backspace.png" alt="←" class="back" />
+      </div>
+      <div class="operand" onclick="operand(7)">7</div>
+      <div class="operand" onclick="operand(8)">8</div>
+      <div class="operand" onclick="operand(9)">9</div>
+      <div class="operator" onclick="operator('+')">+</div>
+      <div class="operand" onclick="operand(4)">4</div>
+      <div class="operand" onclick="operand(5)">5</div>
+      <div class="operand" onclick="operand(6)">6</div>
+      <div class="operator" onclick="operator('-')">-</div>
+      <div class="operand" onclick="operand(1)">1</div>
+      <div class="operand" onclick="operand(2)">2</div>
+      <div class="operand" onclick="operand(3)">3</div>
+      <div class="operator" onclick="operator('*')">×</div>
+      <div class="operand" onclick="zero()">0</div>
+      <div class="operator" onclick="operator('.')">.</div>
+      <div class="operator equal" onclick="getResult()">=</div>
+      <div class="operator" onclick="operator('/')">÷</div>
+    </div>
+  </div>
+</body>
+
+</html>

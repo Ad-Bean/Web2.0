@@ -1,0 +1,32 @@
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width,initial-scale=1')
+        link(rel="stylesheet" href="/stylesheets/bootstrap.min.css")
+        link(rel="stylesheet" href="/stylesheets/homepage.css")
+        link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
+        script(src="/javascripts/jquery.min.js", defer)
+        script(src="/javascripts/bootstrap.bundle.min.js", defer)
+        script(src="/javascripts/popper.min.js", defer)
+        script(src="/javascripts/homepage.js", defer)
+        title Sign In
+    body
+        .myContainer.is-login#mainContainer
+            form.card.card--login.shadow-2dp.is-active#logInForm(action="/" method="post")
+                .card__content.signupSuccessClass
+                    .inputfield.usernameErrorClass
+                        input.inputfield__input(type='text' name="username" value=username data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Please enter your username")
+                        label.inputfield__label Username
+                        span.inputfield__underline
+                    .required
+                        span #{usernameError}
+                    .inputfield.passwordErrorClass
+                        input.inputfield__input(type='password' name="password" data-bs-container="body" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Please enter your password")
+                        label.inputfield__label Password
+                        span.inputfield__underline
+                    .required
+                        span #{passwordError}
+                .card__action
+                    button#pending.btn.btn--primary.btn--block(type='submit') Sign in
+                .card__action
+                    a.btn.btn--secondry.btn--block(href="/regist") Register

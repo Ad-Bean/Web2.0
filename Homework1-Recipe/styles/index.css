@@ -1,0 +1,48 @@
+h1 {
+  font-size: 32pt;
+  font-family: "Century Gothic", Futura, Verdana, sans-serif;
+  letter-spacing: 0.2em;
+  text-decoration: underline;
+  text-align: center;
+}
+
+body {
+  background-color: white;
+  color: #404040;
+  background-image: url("http://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/silverware.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.recipeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipeContainer div {
+  margin: 0 30px;
+}
+
+.recipeContainer p {
+  margin-top: 5px;
+  text-align: center;
+}
+
+img {
+  width: 500px;
+  height: 750px;
+}
+
+img:hover {
+  box-shadow: 10px 10px 10px gray;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  font-size: 32px;
+  font-family: "Georgia", "Garamond", serif;
+  color: black;
+}

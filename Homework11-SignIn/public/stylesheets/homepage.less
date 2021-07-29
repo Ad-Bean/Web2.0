@@ -1,0 +1,708 @@
+// Variables.
+// Primary & secondry colors.
+@primary: #3f3f3f;
+@secondry: #2f5aaa;
+
+// Black & white.
+@black: #000;
+@white: #fff;
+
+// Grey colors.
+@grey-300: #e0e0e0;
+@grey-400: #bdbdbd;
+@grey-500: #9e9e9e;
+@grey-600: #757575;
+@grey-700: #616161;
+@grey-800: #424242;
+
+// Border radius size.
+@radius: 2px;
+
+// Color contrast.
+@contrast: 55%;
+
+// Transition var.
+@transition: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Shadow vars.
+@shadow-penumbra: 12%;
+@shadow-umbra: 20%;
+@shadow-ambient: 14%;
+
+// Mixins.
+.shadow-0dp() {
+  box-shadow: 0 0 0 0 fade(@black, 0%), 0 0 0 0 fade(@black, 0%),
+    0 0 0 0 fade(@black, 0%);
+}
+
+.shadow-2dp() {
+  box-shadow: 0 2px 2px 0 fade(@black, @shadow-penumbra),
+    0 3px 1px -2px fade(@black, @shadow-umbra),
+    0 1px 5px 0 fade(@black, @shadow-ambient);
+}
+
+.shadow-3dp() {
+  box-shadow: 0 3px 4px 0 fade(@black, @shadow-penumbra),
+    0 3px 3px -2px fade(@black, @shadow-umbra),
+    0 1px 8px 0 fade(@black, @shadow-ambient);
+}
+
+.shadow-4dp() {
+  box-shadow: 0 4px 5px 0 fade(@black, @shadow-penumbra),
+    0 1px 10px 0 fade(@black, @shadow-ambient),
+    0 2px 4px -1px fade(@black, @shadow-umbra);
+}
+
+.shadow-6dp() {
+  box-shadow: 0 6px 10px 0 fade(@black, @shadow-penumbra),
+    0 1px 18px 0 fade(@black, @shadow-ambient),
+    0 3px 5px -1px fade(@black, @shadow-umbra);
+}
+
+.shadow-8dp() {
+  box-shadow: 0 8px 10px 1px fade(@black, @shadow-penumbra),
+    0 3px 14px 2px fade(@black, @shadow-ambient),
+    0 5px 5px -3px fade(@black, @shadow-umbra);
+}
+
+.shadow-16dp() {
+  box-shadow: 0 16px 24px 2px fade(@black, @shadow-penumbra),
+    0 6px 30px 5px fade(@black, @shadow-ambient),
+    0 8px 10px -5px fade(@black, @shadow-umbra);
+}
+
+.shadow-24dp() {
+  box-shadow: 0 9px 46px 8px fade(@black, @shadow-penumbra),
+    0 11px 15px -7px fade(@black, @shadow-ambient),
+    0 24px 38px 3px fade(@black, @shadow-umbra);
+}
+
+// Font.
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic,400italic,500italic);
+
+/**
+ * General markup.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+html,
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  color: @grey-800;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: @grey-300;
+  // smooth text a bit better.
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.007);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin: 16px 0;
+}
+
+a {
+  display: inline-block;
+  color: @primary;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: darken(@primary, 12%);
+}
+
+/**
+ * Container.
+ */
+
+.myContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  min-height: 100%;
+  padding: 16px;
+  background-color: transparent;
+  transition: background-color 0.56s @transition 0.28s;
+
+  &.is-login {
+    background-color: @primary;
+  }
+  &.is-amnesia {
+    background-color: @grey-600;
+  }
+  &.is-register {
+    background-color: @secondry;
+  }
+}
+
+/* --------------------------------
+ * Login, Register & Amnesia Card.
+ *
+ * @version 1.0
+ * -------------------------------- */
+
+/* --------------------------------
+ * Card.
+ * -------------------------------- */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: @white;
+  border: 0;
+  border-radius: @radius;
+}
+
+// Modifiers.
+
+.card--login,
+.card--amnesia,
+.card--register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  margin: auto;
+  width: 100%;
+  max-width: 320px;
+  opacity: 0;
+  transform: scale(0) translate(-50%, -50%);
+  transform-origin: 0% 0% 0;
+  transition: all 0.42s @transition 0s;
+
+  &.is-active {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+    transition-delay: 0.35s;
+  }
+}
+
+.card--amnesia {
+  max-width: 400px;
+}
+
+/**
+ * Card title.
+ */
+
+.card__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px;
+  color: currentColor;
+  font-weight: 400;
+}
+
+// Modifiers.
+
+.card__title--bottom {
+  justify-content: flex-end;
+}
+
+.card__title--center {
+  align-items: center;
+}
+
+/* Card title text */
+
+.card__title-text {
+  color: inherit;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+/* Card title sub text */
+
+.card__title-sub-text {
+  color: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  opacity: 0.56;
+}
+
+/**
+ * Card content.
+ */
+
+.card__content {
+  padding: 16px;
+  color: inherit;
+  line-height: 20px;
+  font-size: 14px;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Card action.
+ */
+
+.card__action {
+  display: flex;
+  padding: 8px;
+  flex-direction: row;
+  justify-content: space-between;
+
+  & + & {
+    padding-top: 0;
+  }
+}
+
+// Modifiers.
+
+.card__action--center {
+  justify-content: center;
+
+  .btn + .btn {
+    margin-left: 8px;
+  }
+}
+
+/* --------------------------------
+ * Inputfields.
+ * -------------------------------- */
+
+.inputfield {
+  position: relative;
+  padding: 20px 0;
+}
+
+/**
+ * Inputfields input.
+ */
+
+.inputfield__input {
+  display: block;
+  padding: 4px 0;
+  width: 100%;
+  color: @grey-600;
+  font-size: 16px;
+  line-height: 21px;
+  background-color: transparent;
+  border: 0 solid fade(@black, 12%);
+  border-bottom-width: 1px;
+  outline: none;
+}
+
+/**
+ * Inputfields label.
+ */
+
+.inputfield__label {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  display: block;
+  color: @grey-600;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  pointer-events: none;
+  transition: all 0.28s @transition 0s;
+}
+
+.inputfield.is-dirty .inputfield__label,
+.inputfield__input:focus ~ .inputfield__label {
+  top: 0;
+  font-size: 12px;
+  font-weight: 500;
+  transition-duration: 0.14s;
+}
+
+.inputfield.is-dirty .inputfield__label {
+  color: @grey-400;
+}
+
+.inputfield__input:focus ~ .inputfield__label {
+  color: @primary;
+}
+
+.required {
+  color: #f44336 !important;
+  font-style: normal;
+}
+
+/**
+ * Inputfields under-line.
+ */
+
+.inputfield__underline {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background-color: @primary;
+  transition: all 0.28s @transition 0s;
+}
+
+.inputfield__input:focus ~ .inputfield__underline {
+  left: 0%;
+  right: 0%;
+}
+
+/* --------------------------------
+ * Buttons.
+ * -------------------------------- 
+ */
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 0 8px;
+  color: currentColor;
+  line-height: 36px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: @white;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 10% 10%;
+  border: 0;
+  border-radius: @radius;
+  outline: 0;
+  outline-offset: 0;
+  .shadow-0dp();
+  transition: background-color 0.28s @transition, box-shadow 0.28s @transition,
+    outline-offset 0.28s @transition;
+
+  &:hover {
+    color: @grey-600;
+    .shadow-2dp();
+  }
+  &:focus {
+    outline: thin dotted;
+    outline: 1px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+  &:focus:active,
+  &:active {
+    .shadow-6dp();
+  }
+}
+
+.btn.is-animating {
+  @btnBgColor: contrast(@grey-800, @grey-800, @white, @contrast);
+  background-image: radial-gradient(
+    circle,
+    fade(@btnBgColor, 26%) 10%,
+    fade(@btnBgColor, 0%) 11%
+  );
+  animation: btnRipple 0.35s forwards linear;
+}
+
+/**
+ * Button type modifiers.
+ */
+
+.btn--block {
+  width: 100%;
+  text-align: center;
+
+  & + & {
+    margin-top: 8px;
+  }
+}
+
+.btn--primary {
+  color: @white;
+  background-color: @primary;
+}
+
+.btn--primary.is-animating {
+  background-image: radial-gradient(
+    circle,
+    fade(@white, 26%) 10%,
+    fade(@white, 0%) 11%
+  );
+}
+
+.btn--reset {
+  color: @white;
+  background-color: #8ba;
+}
+
+.btn--secondry {
+  color: @white;
+  background-color: @secondry;
+}
+
+.btn--secondry.is-animating {
+  background-image: radial-gradient(
+    circle,
+    fade(@grey-800, 26%) 10%,
+    fade(@grey-800, 0%) 11%
+  );
+}
+
+/* Flat button */
+
+.btn--flat {
+  color: @grey-800;
+  background-color: fade(@grey-800, 0%);
+  outline: 0 !important;
+  .shadow-0dp() !important;
+
+  &:hover,
+  &:focus,
+  &:focus:active,
+  &:active {
+    background-color: fade(@grey-800, 12%);
+  }
+}
+
+.btn--flat.is-animating {
+  background-image: radial-gradient(
+    circle,
+    fade(@grey-800, 26%) 10%,
+    fade(@grey-800, 0%) 11%
+  );
+}
+
+.btn--flat.btn--primary {
+  color: @primary;
+  background-color: fade(@primary, 0%);
+
+  &:hover,
+  &:focus,
+  &:focus:active,
+  &:active {
+    background-color: fade(@primary, 12%);
+  }
+}
+
+.btn--flat.btn--primary.is-animating {
+  background-image: radial-gradient(
+    circle,
+    fade(@primary, 26%) 10%,
+    fade(@primary, 0%) 11%
+  );
+}
+
+.btn--flat.btn--secondry {
+  color: @secondry;
+  background-color: fade(@secondry, 0%);
+
+  &:hover,
+  &:focus,
+  &:focus:active,
+  &:active {
+    background-color: fade(@secondry, 12%);
+  }
+}
+
+.btn--flat.btn--secondry.is-animating {
+  background-image: radial-gradient(
+    circle,
+    fade(@secondry, 26%) 10%,
+    fade(@secondry, 0%) 11%
+  );
+}
+
+/**
+ * Button animations.
+ */
+
+@keyframes btnRipple {
+  84% {
+    background-size: 1000% 1000%;
+  }
+  100% {
+    background-size: 1100% 1100%;
+  }
+}
+
+/* --------------------------------
+ * Toggle.
+ * -------------------------------- */
+
+.toggle {
+  position: relative;
+  display: inline-flex;
+}
+
+// Modifiers.
+
+.toggle--block {
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.toggle--center {
+  justify-content: center;
+}
+
+/**
+ * Toggle input.
+ */
+
+.toggle__input {
+  position: absolute;
+  z-index: -1;
+  height: 0;
+  width: 0;
+  appearance: none;
+  pointer-events: none;
+  border: 0 !important;
+  opacity: 0;
+}
+
+/**
+ * Toggle label.
+ */
+
+.toggle__label {
+  order: 1;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/**
+ * Toggle checkbox.
+ */
+
+.toggle__checkbox {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  order: 0;
+  align-self: center;
+  margin: auto;
+  margin-left: 8px;
+  margin-right: 16px;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 2px solid @grey-700;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.28s ease-in-out;
+}
+
+.toggle__checkbox::after {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: -1;
+  content: "";
+  height: 48px;
+  width: 48px;
+  background-color: fade(@grey-800, 12%);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  perspective: 18px;
+  perspective-origin: 9px 9px;
+  transform-origin: 9px 9px 0;
+  transform: scale(0) translate(-16px, -16px);
+}
+
+.toggle__checkbox.is-animating::after {
+  animation: checkBoxRipple 0.42s linear forwards;
+}
+
+.toggle__input:checked ~ .toggle__checkbox {
+  background-color: @primary;
+  border-color: @primary;
+}
+
+.toggle__input:checked ~ .toggle__checkbox::after {
+  background-color: fade(@primary, 26%);
+}
+
+/**
+ * Toggle checkbox mark.
+ */
+
+.toggle__checkbox-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  width: 16px;
+  margin-top: -8px;
+  margin-left: -8px;
+  fill: @white;
+  perspective: 8px;
+  perspective-origin: 8px 8px;
+  transform-origin: 8px 8px 0;
+  transform: scale(0);
+  transition: all 0.28s @transition;
+}
+
+.toggle__input:checked ~ .toggle__checkbox > .toggle__checkbox-mark {
+  transform: scale(1);
+}
+
+
+/* --------------------------------
+ * Helpers.
+ * -------------------------------- */
+
+.shadow-0dp {
+  .shadow-0dp();
+}
+.shadow-2dp {
+  .shadow-2dp();
+}
+.shadow-3dp {
+  .shadow-3dp();
+}
+.shadow-4dp {
+  .shadow-4dp();
+}
+.shadow-6dp {
+  .shadow-6dp();
+}
+.shadow-8dp {
+  .shadow-8dp();
+}
+.shadow-16dp {
+  .shadow-16dp();
+}
+.shadow-24dp {
+  .shadow-24dp();
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}

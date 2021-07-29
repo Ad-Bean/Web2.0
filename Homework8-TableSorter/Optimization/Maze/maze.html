@@ -1,0 +1,56 @@
+<!-- 
+Homework 8 - Optimize
+廖雨轩 18322043
+
+Passed W3C HTML Validation Service and no errors.
+All the comments are below. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amazing Mouse Maze</title>
+    <link rel="stylesheet" href="maze.css">
+    <!-- change mdn to bytedance's mdn and use defer attribute so that it can load faster -->
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.4.0/jquery.min.js" defer></script>
+    <script src="https://s1.pstatp.com/cdn/expire-1-M/lodash.js/4.17.12-pre/lodash.min.js" defer></script>
+    <script src="maze.js" defer></script>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="headerContainer">
+            <h1 class="headerTitle">The Amazing Mouse Maze!</h1>
+            <p class="headerInfo">Move your mouse over the "S" to begin.</p>
+            <!-- a paragraph that stylished with opacity 0 to hide the text first -->
+            <p class="headerResult">You Lose!</p>
+        </div>
+
+        <div class="mazeContainer">
+            <div class="wall top"></div>
+            <!-- I add two rows of div (rowContainer and pointerContainer) to use flex box, which can easily style the 2 children box inside at each side of the father box -->
+            <div class="rowContainer">
+                <div class="wall left"></div>
+                <div class="wall right"></div>
+            </div>
+            <div class="pointerContainer">
+                <div class="startPoint">S</div>
+                <div class="endPoint">E</div>
+            </div>
+            <div class="wall between"></div>
+            <div class="wall bottom"></div>
+        </div>
+
+        <div class="infoContainer">
+            <p>The object of this game is to guide the mouse cursor through the start area and get to the area.
+                Be sure to avoid the walls:</p>
+            <!-- an example of wall -->
+            <div class="example"></div>
+            <p>Good Luck!</p>
+        </div>
+    </div>
+</body>
+
+</html>

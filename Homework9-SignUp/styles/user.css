@@ -1,0 +1,90 @@
+/* 
+  Homework 9 - Sign Up
+  廖雨轩 18322043
+
+  Passed W3C CSS Validation Service and no errors.
+*/
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #354b60;
+}
+
+.mainContainer {
+  width: 400px;
+  height: 320px;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 200px;
+  text-align: center;
+  padding-top: 32px;
+  border-radius: 12px;
+}
+
+.headerContainer {
+  width: 320px;
+  height: 48px;
+  border-radius: 16px;
+  margin: 0 auto;
+}
+
+.infoContainer {
+  margin-top: 32px;
+}
+
+.info {
+  font-size: 36px;
+  color: #000;
+  line-height: 48px;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.infoBox {
+  width: 320px;
+  display: flex;
+  margin: 16px auto;
+  margin-left: 48px;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  margin-right: 16px;
+}
+
+.userInfo {
+  width: 240px;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid #010a15;
+  background-color: #010a15;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px;
+  letter-spacing: 2px;
+}
+
+.signUpContainer {
+  width: 400px;
+  height: 42px;
+  margin: 0 auto;
+  margin-top: 32px;
+  border-radius: 8px;
+  background-color: #222;
+  text-align: center;
+}
+
+.signUp {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 42px;
+  text-decoration: none;
+}
+
+.signUp:hover {
+  color: #366897;
+}

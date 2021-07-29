@@ -1,0 +1,75 @@
+/* 
+  Homework 9 - Sign Up
+  廖雨轩 18322043
+
+  Passed W3C CSS Validation Service and no errors.
+*/
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #354b60;
+}
+
+.mainContainer {
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 200px;
+}
+
+.headerContainer {
+  padding-top: 4px;
+}
+
+.searchContainer {
+  width: 280px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+#username {
+  width: 280px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.signIn {
+  border: none;
+  margin: 0 8px;
+  background-color: #010a15;
+  width: 160px;
+  height: 40px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.signIn:hover {
+  background-color: #354b60;
+}
+
+.info {
+  margin: 0 auto;
+  width: 300px;
+  height: 36px;
+  background-color: #ffeeee;
+  border-radius: 8px;
+  line-height: 36px;
+  color: #fa5580;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.taller {
+  height: 260px;
+}

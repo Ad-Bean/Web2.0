@@ -1,0 +1,55 @@
+/* 
+  Homework 8 - Table Sorter
+  廖雨轩 18322043
+
+  Passed W3C CSS Validation Service and no errors.
+  All the comments are below.  
+*/
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+table,
+td,
+th {
+  border: 1px solid #c0c0c0;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 4px;
+  height: 20px;
+}
+
+th {
+  padding: 4px;
+  text-align: left;
+  font-weight: 700;
+  color: #fff;
+  background-color: #031a7e;
+}
+
+#todo th:last-child {
+  width: 180px;
+}
+
+#staff th {
+  width: 130px;
+}
+
+/* use css selector to color the odd row and even row */
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+.active {
+  background-color: #a5b0fc;
+}
+
+.denote {
+  float: right;
+}

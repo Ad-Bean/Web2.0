@@ -1,0 +1,11 @@
+{
+  "name": "homework9-signup",
+  "version": "1.0.0",
+  "description": "Liao Yuxuan 18322043 Homework-9 Sign Up",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Liao Yuxuan",
+  "license": "ISC"
+}

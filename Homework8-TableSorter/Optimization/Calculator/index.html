@@ -1,0 +1,59 @@
+<!-- 
+Homework 8 - Optimize
+廖雨轩 18322043
+
+Passed W3C HTML Validation Service and no errors.
+All the comments are below. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="assets/Calculator.ico" type="image/x-icon" />
+  <!-- change mdn to bytedance's mdn and use defer attribute so that it can load faster -->
+  <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.4.0/jquery.min.js" defer></script>
+  <script src="https://s1.pstatp.com/cdn/expire-1-M/lodash.js/4.17.12-pre/lodash.min.js" defer></script>
+  <script src="calculator.js" defer></script>
+  <title>Calculator</title>
+</head>
+
+<body>
+  <div class="mainContainer">
+    <!-- the upper input is expression outpu, while the lower input is the result -->
+    <div class="outputContainer">
+      <input id="expression" name="output" value="0" type="text" disabled />
+      <input id="result" type="text" disabled />
+    </div>
+    <!-- basic operators: + - * / = . () and backspace, and use onclick event to calculate -->
+    <div class="operatorContainer">
+      <div class="operator clear">C</div>
+      <div class="operator leftBrace">(</div>
+      <div class="operator rightBrace">)</div>
+      <div class="operator backspace">
+        <img src="assets/backspace.png" alt="←" class="back" />
+      </div>
+      <div class="operand">7</div>
+      <div class="operand">8</div>
+      <div class="operand">9</div>
+      <div class="operator">+</div>
+      <div class="operand">4</div>
+      <div class="operand">5</div>
+      <div class="operand">6</div>
+      <div class="operator">-</div>
+      <div class="operand">1</div>
+      <div class="operand">2</div>
+      <div class="operand">3</div>
+      <div class="operator">×</div>
+      <div class="operand">0</div>
+      <div class="operator">.</div>
+      <div class="operator equal">=</div>
+      <div class="operator">÷</div>
+    </div>
+  </div>
+</body>
+
+</html>

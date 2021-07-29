@@ -1,0 +1,63 @@
+<!-- 
+Homework 6-2 - Whac a mole
+廖雨轩 18322043
+
+Passed W3C HTML Validation Service and no errors.
+All the comments are below. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whac a mole</title>
+    <link rel="stylesheet" href="whac-a-mole.css">
+    <!-- use async attribute to avoid blocking the html -->
+    <script src="whac-a-mole.js" async></script>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="headerContainer">
+            <h1 class="headerTitle">Whac-a-mole</h1>
+            <p class="headerInfo">Test your skill. How many boxes(moles) can you check(hit) in 30 seconds?</p>
+            <div class="menuBar">
+                <div class="flexBox">
+
+                    <div class="start">
+                        <div class="buttonContainer">
+                            <button class="gameButton">Start Game | Stop Game</button>
+                        </div>
+                        <div class="time">
+                            <span class="timeText">Time:</span>
+                            <input type="text" id="time" value="30" disabled>
+                        </div>
+                    </div>
+                    <div class="condition">
+                        <div class="button">
+                            <input type="text" id="condition" value="Ready to Play" disabled>
+                        </div>
+                        <div class="button">
+                            <span class="scoreText">Score:</span>
+                            <input type="text" id="score" value="0" disabled>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- use an empty div, which will be appended children in js -->
+        <div class="gameContainer">
+        </div>
+        <div class="instructions">
+            <h2>Instructions:</h2>
+            <ol>
+                <li>Click on the radio buttons(moles) as they are selected randomly by the computer.</li>
+                <li>1 point per hit, minus 1 point per miss.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

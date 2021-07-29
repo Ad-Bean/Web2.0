@@ -1,0 +1,251 @@
+/* 
+    Homework 3 - Ring Menu
+    廖雨轩  18322043
+
+    Passed W3C CSS Validation Service and no errors.
+    All the comments are below.
+*/
+
+#at-plus-container {
+  font-family: Futura, Verdana, sans-serif;
+}
+
+/* let the ring menu be the mid-bottem of the page */
+#bottom-positioner {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+}
+
+/* reset the unordered list's style */
+#bottom-positioner ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* hide the info-bar underneath the icon */
+#info-bar {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+}
+
+/* hide the info and its list underneath the icon  */
+.info {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: #7e7e7e;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 50%;
+  /* set all the style a transition so that it will return back slowly to the default style */
+  transition: all 0.5s 0.3s;
+}
+
+/* let info be bigger and translate to top of the icon*/
+#button:hover .info {
+  height: 150px;
+  width: 150px;
+  /* clear the delay so that it will immediately show the info when hovered */
+  transform: translate(-60px, -170px);
+  transition-delay: 0s;
+}
+
+#button:hover .info ul {
+  /* clear the delay so that unordered list will be immediately shown when hovered */
+  transform: translate(70px, 0px);
+  transition-delay: 0s;
+}
+
+/* use relative positioning to put the lists' position properly */
+.info ul,
+.info ul li {
+  position: relative;
+  /* set a transition to put list in right position and slowly translate back to default */
+  transition: all 0.5s 0.5s;
+}
+
+/* From line 70 to 132, let the span and img be their positions properly */
+.info .user {
+  top: 0;
+  left: -20px;
+}
+
+.info .comment {
+  top: 15px;
+  left: -35px;
+}
+
+.info .posted {
+  top: 33px;
+  left: -47px;
+}
+
+.info .like {
+  top: 33px;
+  left: -13px;
+}
+
+.info .page span {
+  color: white;
+}
+
+.info .mine span {
+  color: #079e6e;
+}
+
+.info .mine {
+  float: left;
+}
+
+#info-bar .info span {
+  position: absolute;
+}
+
+.info .user span {
+  font-size: large;
+  font-weight: bold;
+  top: 0px;
+  left: 38px;
+}
+
+.info .comment span {
+  font-size: xx-large;
+  top: -12px;
+  left: 50px;
+}
+
+.info .posted span {
+  font-weight: bold;
+  font-size: x-large;
+  top: -3px;
+  left: 30px;
+}
+
+.info .like span {
+  font-weight: bold;
+  font-size: x-large;
+  top: -3px;
+  left: 34px;
+}
+
+#control-ring-container {
+  position: absolute;
+}
+
+#control-ring {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+
+/* style all the adjacent rings and its transition */
+.button {
+  position: relative;
+  background: #6b6b6b no-repeat center;
+  height: 40px;
+  border-radius: 50%;
+  /* set opacity and a transition so that it can slowly return to the default */
+  opacity: 0;
+  transition: all 0.5s 0.3s;
+}
+
+/* Use opacity and trasition to show the ring */
+#button:hover .button {
+  cursor: pointer;
+  /* use opacity and clear trasition-delay to show the rings */
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+/* Use bottom attribute to let all the ring be together, which will translate like a ring  */
+#control-ring .mask {
+  bottom: 0px;
+  background-image: url("assets/images/nomask.png");
+}
+
+#control-ring .history {
+  bottom: 40px;
+  background-image: url("assets/images/history.png");
+}
+
+#control-ring .message {
+  bottom: 80px;
+  background-image: url("assets/images/message.png");
+}
+
+#control-ring .setting {
+  bottom: 120px;
+  background-image: url("assets/images/setting.png");
+}
+
+#control-ring .sign {
+  bottom: 160px;
+  background-image: url("assets/images/signin.png");
+}
+
+#control-ring .unread {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  /* set the radius, width and height to be a circle */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* put the bubble  to the upper-right */
+  position: absolute;
+  left: 25px;
+  top: -5px;
+  /* use opacity and 0.5s trasition-delay to slowly make the unread bubble disappear */
+  opacity: 0;
+  transition-delay: 0.5s;
+}
+
+/* use opacity and clear trasition-delay to show the unread bubble */
+#button:hover .unread {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+/* from line 207 to 225, let the rings be their positions properly */
+#button:hover .mask {
+  transform: translate(-65px, -55px);
+}
+#button:hover .history {
+  transform: translate(-85px, -10px);
+}
+
+#button:hover .message {
+  transform: translate(-65px, 35px);
+}
+
+#button:hover .setting {
+  transform: translate(-25px, 65px);
+}
+
+#button:hover .sign {
+  transform: translate(25px, 50px);
+}
+
+/* finally, the icon */
+.apb .icon {
+  /* set background a center ,no-repeat and 80% large png */
+  background: no-repeat center/80% url("assets/images/atplus_white.png");
+  background-color: #9da1ce;
+  border-radius: 50%;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  /* set a delay transition so that it can slowly return to the default */
+  transition: all 0.5s 0.5s;
+}
+
+/* use scale to enlarge the icon and change its color */
+#button:hover .apb .icon {
+  background-image: url("assets/images/atplus_green.png");
+  background-color: rgba(48, 63, 159, 1);
+  transform: scale(1.5, 1.5);
+  transition: all 0.5s;
+}

@@ -1,0 +1,114 @@
+/* 
+  Homework 7 - Fifteen Puzzle
+  廖雨轩 18322043
+
+  Passed W3C CSS Validation Service and no errors.
+  All the comments are below.  
+*/
+.mainContainer {
+  width: 600px;
+  height: 700px;
+  padding: 20px;
+  margin: 4% auto;
+  border: 1px solid grey;
+  border-radius: 4px;
+  box-shadow: 12px 12px 12px 1px rgba(0, 0, 0, 0.2);
+  font-family: Verdana, Arial, "Microsoft Yahei", sans-serif;
+}
+
+.header {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header .won {
+  height: 20px;
+  font-size: 20px;
+  margin: 0;
+}
+
+.title {
+  margin: 8px;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+.gameContainer {
+  width: 480px;
+  height: 480px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.game {
+  width: 400px;
+  height: 400px;
+  margin: 40px auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /* use relative to set the position of puzzles */
+  position: relative;
+}
+
+/* use transition to animate the hover and shuffle */
+.puzzles {
+  width: 96px;
+  height: 96px;
+  border: 1px solid #808080;
+  margin: 2px;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+}
+
+.puzzles .pieces {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.puzzles:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 2px #000;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+/* use flex box to let the menu line */
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.start,
+.change,
+.reset {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #4285f4;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.start:hover,
+.change:hover,
+.reset:hover {
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
+/* use pointer-events to stop hover and active */
+.noneActive {
+  pointer-events: none;
+}

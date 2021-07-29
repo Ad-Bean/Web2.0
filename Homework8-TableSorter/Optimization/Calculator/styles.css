@@ -1,0 +1,117 @@
+/* 
+  Homework 8 - Optimize
+  廖雨轩 18322043
+
+  Passed W3C CSS Validation Service and no errors.
+  All the comments are below.  
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0eeef;
+}
+
+/* use grid to layout the numbers and operators */
+.operatorContainer {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  grid-gap: 10px 10px;
+}
+
+/* use box-shadow to beautify the button on the calculator */
+.mainContainer {
+  padding: 0;
+  padding-top: 1px;
+  background: #4b4949;
+  width: 500px;
+  height: 700px;
+  margin: 2% auto;
+  border-radius: 20px;
+  box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.5),
+    inset 0 -5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.outputContainer {
+  width: 90%;
+  height: 120px;
+  margin: 4%;
+  font-family: cursive, sans-serif;
+  background: #cddecc;
+  border: none;
+  padding-right: 10px;
+  border-radius: 15px;
+  box-shadow: inset 0 -5px 10px 2px #6b756a, 0 5px 10px 0px #3f423f;
+}
+
+/* set two lines of output's style */
+#expression,
+#result {
+  border: none;
+  background: transparent;
+  font-size: 42px;
+}
+
+#expression {
+  text-align-last: left;
+  width: 99%;
+  padding-left: 10px;
+  overflow: auto;
+}
+
+#result {
+  display: block;
+  text-align: right;
+  width: 99%;
+  overflow: visible;
+}
+
+.operator,
+.operand {
+  position: relative;
+  text-align: center;
+  font-size: 66px;
+  font-weight: 700;
+  margin: 5px;
+  border-radius: 18px;
+  font-family: sans-serif;
+  background: #f0eeef;
+  color: #3b3b3c;
+  box-shadow: inset 0 5px 10px 0 #fff, inset 0 -5px 10px 3px #847a7aba,
+    0 5px 10px 0px #1e211e;
+  cursor: pointer;
+}
+
+/* set a transform for div making it like a button */
+.operator:active,
+.operand:active {
+  transform: scale(1.01);
+}
+
+.clear {
+  background: #ff1900;
+  color: #f0eeef;
+  box-shadow: inset 0 5px 10px 0 #ff1900, inset 0 -5px 10px 3px #2d1f1fba,
+    0 5px 10px 0px #534f4d;
+}
+
+/* set the backspace img particularly */
+.back {
+  position: absolute;
+  left: 15%;
+  top: 8%;
+}
+
+.leftBrace,
+.rightBrace {
+  font-size: 60px;
+}
+
+.equal {
+  background: #ff6600;
+  color: #fff;
+  box-shadow: inset 0 5px 10px 0 #ff6600, inset 0 -5px 10px 3px #41290aba,
+    0 5px 10px 0px #532711;
+}

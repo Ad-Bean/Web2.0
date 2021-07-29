@@ -1,0 +1,70 @@
+<!-- 
+Homework 9 - Sign Up
+廖雨轩 18322043
+
+Passed W3C HTML Validation Service and no errors.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.4.0/jquery.min.js" defer></script>
+    <link rel="stylesheet" href="../styles/SignUp.css">
+    <link rel="shortcut icon" href="../assets/fav.ico" type="image/x-icon">
+    <script src="SignUp.js" defer></script>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="headerContainer">
+            <h1 class="header">Sign Up</h1>
+        </div>
+        <div class="info"></div>
+        <form action="http://localhost:8000/register" method="post" class="formContainer">
+            <div class="form-group username">
+                <label for="username">
+                    <img src="../assets/user.svg" alt="username" class="icon">
+                </label>
+                <input type="text" name="username" id="username" placeholder="Username" required>
+                <img src="../assets/checked.svg" alt="checked" class="usernamecheck checked">
+                <img src="../assets/false.svg" alt="false" class="usernamefalse checked">
+            </div>
+            <div class="form-group studentID">
+                <label for="studentID">
+                    <img src="../assets/id.svg" alt="student ID" class="icon">
+                </label>
+                <input type="text" name="studentID" id="studentID" placeholder="Student ID" required>
+                <img src="../assets/checked.svg" alt="checked" class="studentIDcheck checked">
+                <img src="../assets/false.svg" alt="false" class="studentIDfalse checked">
+            </div>
+            <div class="form-group phone">
+                <label for="phone">
+                    <img src="../assets/phone.svg" alt="phone" class="icon">
+                </label>
+                <input type="text" name="phone" id="phone" placeholder="Phone" required>
+                <img src="../assets/checked.svg" alt="checked" class="phonecheck checked">
+                <img src="../assets/false.svg" alt="false" class="phonefalse checked">
+            </div>
+            <div class="form-group email">
+                <label for="email">
+                    <img src="../assets/email.svg" alt="email" class="icon">
+                </label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <img src="../assets/checked.svg" alt="checked" class="emailcheck checked">
+                <img src="../assets/false.svg" alt="false" class="emailfalse checked">
+            </div>
+            <div class="form-example buttonContainer">
+                <input type="reset" value="Reset" class="reset button">
+                <input type="submit" value="Register" class="register button">
+            </div>
+        </form>
+    </div>
+    <div class="signInContainer">
+        <a href="./searchUser.html" class="signIn">Sign In Here</a>
+    </div>
+</body>
+
+</html>

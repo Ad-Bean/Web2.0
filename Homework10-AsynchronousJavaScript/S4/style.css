@@ -1,0 +1,203 @@
+/* let the main container be the center and bottom of the page, also the box */
+.mainContainer {
+  margin-top: calc(500px - 46px);
+}
+
+#at-plus-container {
+  font-family: Arial, Verdana, sans-serif;
+  width: 200px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header {
+  font-family: Verdana, sans-serif;
+  height: 46px;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 32px;
+}
+
+.sequence {
+  color: #373ba9;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* let the @ button be the bottom of the box */
+#bottom-positioner {
+  position: absolute;
+  bottom: 84px;
+}
+
+/* clear ul's default style */
+.unordered-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* hide the info bar */
+.info {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.5s 0.3s;
+  background-color: #7e7e7e;
+}
+
+/* when the sum can be calculated, paint info bar into blue */
+#info-bar[done="true"] .info {
+  background-color: #373ba9;
+  cursor: pointer;
+}
+
+.sum-of-random {
+  font-size: 48px;
+  font-weight: 700;
+  color: #25e4a1;
+  text-align: center;
+  line-height: 150px;
+}
+
+/* when hover the @ button, show the ring */
+#button:hover .button {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+#button:hover .info {
+  opacity: 1;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  transition-delay: 0s;
+  transform: translate(-40px, -180px);
+}
+
+#control-ring-container {
+  position: absolute;
+}
+
+#control-ring {
+  height: 40px;
+  width: 40px;
+}
+
+/* when there's a ring is await, paint others into grey */
+#control-ring[status="await"] .button {
+  background-color: #7e7e7e;
+  cursor: default;
+}
+
+/* paint the awaiting one into blue */
+#control-ring[status="await"] .button[status="await"] {
+  background-color: #373ba9;
+  cursor: wait;
+}
+
+/* paint the done ring into grey */
+#control-ring .button[status="done"] {
+  background-color: #7e7e7e;
+  cursor: default;
+}
+
+.button {
+  opacity: 0;
+  height: 40px;
+  font-size: 32px;
+  color: #25e4a1;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #373ba9;
+  cursor: pointer;
+  transition: all 0.5s 0.3s;
+}
+
+#control-ring .A {
+  bottom: -2px;
+}
+
+#control-ring .B {
+  bottom: 32px;
+}
+
+#control-ring .C {
+  bottom: 76px;
+}
+
+#control-ring .D {
+  bottom: 108px;
+}
+
+#control-ring .E {
+  bottom: 156px;
+}
+
+#control-ring .unread {
+  top: -5px;
+  left: 25px;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-weight: 700;
+  line-height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+  transition-delay: 0.5s;
+  background-color: #f00;
+  font-size: 16px;
+}
+
+#control-ring .button[value] .unread {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+#button:hover .A {
+  transform: translate(-60px, -48px);
+}
+
+#button:hover .B {
+  transform: translate(-64px, 0px);
+}
+
+#button:hover .C {
+  transform: translate(-48px, 50px);
+}
+
+#button:hover .D {
+  transform: translate(0px, 60px);
+}
+
+#button:hover .E {
+  transform: translate(52px, 60px);
+}
+
+.apb .icon {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background: no-repeat center/80% url("../assets/images/atplus_white.png");
+  background-color: #9da1ce;
+  transition: all 0.5s 0.5s;
+}
+
+#button:hover .apb .icon {
+  transform: scale(1.5, 1.5);
+  background-color: #373ba9;
+  background-image: url("../assets/images/atplus_green.png");
+  transition: all 0.5s;
+}
